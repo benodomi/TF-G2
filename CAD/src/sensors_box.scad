@@ -1,10 +1,10 @@
 $fn=100;
-width = 85;
-length = 40;
-depth = 30;
+width = 85-15;
+length = 26;
+depth = 25;
 
-corner_r = 3;
-wall_th = 3;
+corner_r = 2;
+wall_th = 2;
 
 lid_depth = 0;
 lid_width = 0;
@@ -126,23 +126,23 @@ shelf(width, length, depth,wall_th);
 
 }
 //hole for ultrasonic sensor
-translate([-width/2+13+wall_th, length-17-wall_th,-5]){
-cylinder(r=17/2,h=wall_th+5);
+translate([-width/2+16.2/2+3+0.5+wall_th, length-16.2/2-2-wall_th,-5]){
+cylinder(r=16.2/2,h=wall_th+5);
 }
 
 //hole for lidar
 
-translate([width/2-10-wall_th-34,length-wall_th-16-5,-2]){
-cube([34,16,wall_th+5]);
+translate([width/2-5-wall_th-33.1-1,length-wall_th-16-5,-2]){
+cube([33.1,15.1,wall_th+5]);
 }
 
 //hole for cables
-translate([-width/2+wall_th+10+15,-150,wall_th+17]){
+translate([-width/2+wall_th+10+15,-150,wall_th+12]){
 //cube([wall_th+2,10,6]);
 cube([10,wall_th+500,6]);
 }
 
-for(x=[-30,30]) //diery pre sruby
+for(x=[-20,20]) //diery pre sruby
     translate([x,300,attach_h+7/2]){
                 rotate([90,0,0]){
                     cylinder(r=M3_screw_diameter/2,h=500); 
@@ -164,12 +164,12 @@ translate([0,-wall_th-translation, depth+wall_th+1]){
 }
 
 //hole for cables
-translate([-width/2+wall_th+10+15,-150,wall_th+17]){
+translate([-width/2+wall_th+10+15,-150,wall_th+12]){
 //cube([wall_th+2,10,6]);
 cube([10,wall_th+500,6]);
 }
 
-for(x=[-30,30]) //diery pre sruby
+for(x=[-20,20]) //diery pre sruby
     translate([x,300,attach_h+7/2]){
                 rotate([90,0,0]){
                     cylinder(r=M3_screw_diameter/2,h=500); 
@@ -178,6 +178,6 @@ for(x=[-30,30]) //diery pre sruby
 }
 
 //sensors_box_upper_part();
-//sensors_box_sensor_part();
+sensors_box_sensor_part();
 
 
